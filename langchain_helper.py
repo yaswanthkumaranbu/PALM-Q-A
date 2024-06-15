@@ -42,46 +42,42 @@ def get_user_role(user_id):
     }
     return user_roles.get(user_id, 'CEO')
 
-# Function to load and filter data based on role
-def load_and_filter_data(user_role):
+# Function to load all data
+def load_data():
     loader = CustomCSVLoader(file_path='codebasics_faqs.csv', source_column="prompt")
-    data = loader.load()
-    filtered_docs = [doc for doc in data if doc.metadata.get('role') == user_role]
-    if user_role=='VICE PRESIDENT':
-        return filtered_docs
-    else:
-        return data
+    return loader.load()
 
-# Function to get data for a logged-in user
-def get_data_for_user(user_id):
-    user_role = get_user_role(user_id)
-    filtered_data = load_and_filter_data(user_role)
-    return filtered_data
-
+# Function to create a single vector database with role-based indexing
 def create_vector_db():
-    roles = ['CEO', 'VICE PRESIDENT']
-    for role in roles:
-        user_data = load_and_filter_data(role)
-        vectordb = FAISS.from_documents(documents=user_data, embedding=embeddings)
-        vectordb.save_local(f"{role}_faiss_index")
+    data = load_data()
+    vectordb = FAISS.from_documents(documents=data, embedding=embeddings)
+    vectordb.save_local("faiss_index")
 
+# Function to get QA chain with role-based filtering
 def get_qa_chain(user_id):
     user_role = get_user_role(user_id)
-    vectordb_file_path = f"{user_role}_faiss_index"
+    vectordb_file_path = "faiss_index"
 
-    # Load the vector database from the local folder
-    vectordb = FAISS.load_local(vectordb_file_path, embeddings)
+    # docs=list(vectordb.docstore._dict.values())
+    knowledge_base=FAISS.load_local(vectordb_file_path,embeddings)
+    d=knowledge_base.docstore._dict
+    del_list=[]
+    for key,doc in d.items():
+        if doc.metadata['role']!=user_role:
+            del_list.append(key)
+    knowledge_base.delete(del_list)
+    # docs=list(knowledge_base.docstore._dict.values())
+    # print(docs)
 
-    # Create a retriever for querying the vector database
-    retriever = vectordb.as_retriever(score_threshold=0.7)
+    retriever = knowledge_base.as_retriever(score_threshold=0.7)
 
-    prompt_template = """Given the following context and a question, generate an answer based on this context only.
-    In the answer try to provide as much text as possible from "response" section in the source document context without making much changes.
-    If the answer is not found in the context, kindly state "I don't know." Don't try to make up an answer.
- 
-    CONTEXT: {context}
+    prompt_template = """Given the following context from a document relevant to the 'role' and a question, generate an answer based on this context only.
+In the answer, copy and paste the exact answer from the 'response' section, or state 'I don't know' if no answer is found in this document. 
+Don't try to make up an answer.
 
-    QUESTION: {question}"""
+CONTEXT: {context}
+
+QUESTION: {question}"""
 
     PROMPT = PromptTemplate(
         template=prompt_template, input_variables=["context", "question"]
@@ -96,9 +92,9 @@ def get_qa_chain(user_id):
 
     return chain
 
-if __name__ == "__main__":
-    create_vector_db()
-    user_id = 1  # Example user ID
-    chain = get_qa_chain(user_id)
-    result = chain({"question": "Do you have a JavaScript course?"})
-    print(result)
+# if __name__ == "_main_":
+#     create_vector_db()
+#     user_id = 1  # Example user ID
+#     chain = get_qa_chain(user_id)
+#     result = chain({"question": "Do you have a JavaScript course?"})
+#     print(result)

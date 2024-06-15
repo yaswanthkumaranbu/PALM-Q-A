@@ -1,6 +1,6 @@
 prompt,response,role
 I have never done programming in my life. Can I take this bootcamp?,"Yes, this is the perfect bootcamp for anyone who has never done coding and wants to build a career in the IT/Data Analytics industry or just wants to perform better in your current job or business using data.",CEO
-Why should I trust Codebasics?,Till now 9000 + learners have benefitted from the quality of our courses. You can check the review section and also we have attached their LinkedIn profiles so that you can connect with them and ask directly.,CEO
+Why should I trust Codebasics?,Till now 9000 + learners have benefitted from the quality of our courses. You can check the review section and also we have attached their LinkedIn profiles so that you can connect with them and ask directly.,VICE PRESIDENT
 Is there any prerequisite for taking this bootcamp ?,"Our bootcamp is specifically designed for beginners with no prior experience in this field. The only prerequisite is that you need to have a functional laptop with at least 4GB ram, an internet connection, and a thrill to learn data analysis.",CEO
 "What datasets are used in this bootcamp? Is it some toy datasets or
  something that mimics a real-world business problem?",The datasets used in this bootcamp are crafted from scratch to mimic the real business world by consolidating our years of experience. The datasets not just contain more than a million rows but also cover multiple facets of the business.,CEO
@@ -224,31 +224,31 @@ Check this reference for further details: https://discordapp.com/channels/109061
 The year column is missing in the P&L check. How can I resolve this issue and obtain the year column?,"Check this reference:
  https://discord.com/channels/1090613684163850280/1111101322406658098/1111137901816848494",VICE PRESIDENT
 There are missing values in the P&L check. How can I address this issue and handle the missing values appropriately?,"Check this reference:
-https://discordapp.com/channels/1090613684163850280/1108980495477395486/1109016973662240848",VICE PRESIDENT
+https://discordapp.com/channels/1090613684163850280/1108980495477395486/1109016973662240848",CEO
 How can I rearrange the column order in the P&L check? I would like to change the order of the columns.,"Check this reference:
-https://discord.com/channels/1090613684163850280/1112342820930453516/1112399292792062022",VICE PRESIDENT
+https://discord.com/channels/1090613684163850280/1112342820930453516/1112399292792062022",CEO
 Why is the year 2018 missing or disappeared?,"Check this reference:
-https://discordapp.com/channels/1090613684163850280/1111545547426369637/1111563527753318430",VICE PRESIDENT
+https://discordapp.com/channels/1090613684163850280/1111545547426369637/1111563527753318430",CEO
 I'm experiencing a flat line in the Line chart of the Finance View. How can I address this issue and ensure the chart displays the expected data correctly?,"Check this reference:
-https://discord.com/channels/1090613684163850280/1112243985784774687/1112244353126113302",VICE PRESIDENT
+https://discord.com/channels/1090613684163850280/1112243985784774687/1112244353126113302",CEO
 "During the process of creating the line chart for forecast accuracy vs month in the Supply Chain View, I encountered an issue with the visual representation.
 The problem occurred at the 5:00-minute mark. I selected the year 2021, expecting the graph to display data only from September 2020 to August 2021.
 However, instead of the desired timeframe, the chart displayed data from all months between 2017 and 2022.
 
 How to solve and fix this issue?
 ","Check this reference:
-https://discordapp.com/channels/1090613684163850280/1113690341929918505/1113750218618445824",VICE PRESIDENT
+https://discordapp.com/channels/1090613684163850280/1113690341929918505/1113750218618445824",CEO
 "It appears that the X-axis of the chart is not starting with the month of September as expected. Instead, it is starting with a different month.
 How to solve this?","Check this reference:
-https://discordapp.com/channels/1090613684163850280/1112567189724213339/1112596364862423090",VICE PRESIDENT
-Why we use Net error in place of absolute net error,"Directional Insight: The net error metric offers valuable information regarding the direction of the error in forecasting, distinguishing between positive (overestimation) and negative (underestimation) values. This enables the identification of specific products that consistently outperform or underperform relative to the expected values. Additionally, net error provides insights into the risk factor, indicating if there are instances of stockouts or excessive inventory levels.",VICE PRESIDENT
+https://discordapp.com/channels/1090613684163850280/1112567189724213339/1112596364862423090",CEO
+Why we use Net error in place of absolute net error,"Directional Insight: The net error metric offers valuable information regarding the direction of the error in forecasting, distinguishing between positive (overestimation) and negative (underestimation) values. This enables the identification of specific products that consistently outperform or underperform relative to the expected values. Additionally, net error provides insights into the risk factor, indicating if there are instances of stockouts or excessive inventory levels.",CEO
 "I am encountering an issue where the NIS IND column has the same value in all rows. As a result, I am unable to obtain the correct value for the benchmark variable.
  How can I address this problem and obtain accurate benchmark values?","Have you taken the 'market' column from dim_market? Can you please check again. 
 
-Check this reference for further details: https://discordapp.com/channels/1090613684163850280/1107202294476443789/1107208944931311647",VICE PRESIDENT
+Check this reference for further details: https://discordapp.com/channels/1090613684163850280/1107202294476443789/1107208944931311647",CEO
 How do I update source in power query ?,"Follow the discord link : 
 
- https://discord.com/channels/1090613684163850280/1114113976616353832/1114121330925768754",VICE PRESIDENT
+ https://discord.com/channels/1090613684163850280/1114113976616353832/1114121330925768754",CEO
 How do I enable Power Pivot before using it for the first time ?,"Follow the process in the link : 
 
-https://drive.google.com/file/d/1-mO-v52h-YTY1s-v30liBJPu6Yj4OUxb/view?usp=share_link",VICE PRESIDENT
+https://drive.google.com/file/d/1-mO-v52h-YTY1s-v30liBJPu6Yj4OUxb/view?usp=share_link",CEO
